@@ -1,0 +1,50 @@
+.MarksForm {
+    position: relative;
+    font-size: 40px;
+    display: inline-block;
+}
+
+.MarksForm::before {
+    content: '★★★★★';
+    display: block;
+}
+
+.MarksDiv {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+}
+
+.Marks {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+}
+
+.MarksLabel {
+    flex: 0 0 20%;
+    height: 100%;
+    cursor: pointer;
+    color: black;
+}
+
+.MarksLabel::before {
+    content: '★';
+    display: block;
+    transition: color 0.3s ease 0s;
+}
+
+.MarksLabel:hover,
+.MarksLabel:hover ~ .MarksLabel,
+.MarksLabel:checked ~ .MarksLabel:hover {
+    color: yellow;
+}
